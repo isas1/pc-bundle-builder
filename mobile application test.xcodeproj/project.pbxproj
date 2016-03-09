@@ -14,6 +14,13 @@
 		DB5B698F1C28DBCA00E25030 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB5B698D1C28DBCA00E25030 /* LaunchScreen.storyboard */; };
 		DB5B699A1C28DBCA00E25030 /* mobile_application_testTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5B69991C28DBCA00E25030 /* mobile_application_testTests.swift */; };
 		DB5B69A51C28DBCA00E25030 /* mobile_application_testUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5B69A41C28DBCA00E25030 /* mobile_application_testUITests.swift */; };
+		DBA9781F1C84AACA003291E4 /* PCs.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA9781E1C84AACA003291E4 /* PCs.swift */; };
+		DBA978201C84AACA003291E4 /* PCs.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA9781E1C84AACA003291E4 /* PCs.swift */; };
+		DBA978231C859381003291E4 /* PcTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA978211C859381003291E4 /* PcTableViewController.swift */; };
+		DBA978281C86E68F003291E4 /* MonitorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA978271C86E68F003291E4 /* MonitorTableViewController.swift */; };
+		DBA9782A1C870B17003291E4 /* Monitors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA978291C870B17003291E4 /* Monitors.swift */; };
+		DBA9782C1C8723AB003291E4 /* monitorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA9782B1C8723AB003291E4 /* monitorTableViewCell.swift */; };
+		DBDF941C1C83646B00693149 /* pcTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF941B1C83646B00693149 /* pcTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +54,12 @@
 		DB5B69A01C28DBCA00E25030 /* mobile application testUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mobile application testUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB5B69A41C28DBCA00E25030 /* mobile_application_testUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mobile_application_testUITests.swift; sourceTree = "<group>"; };
 		DB5B69A61C28DBCA00E25030 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBA9781E1C84AACA003291E4 /* PCs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PCs.swift; sourceTree = "<group>"; };
+		DBA978211C859381003291E4 /* PcTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PcTableViewController.swift; sourceTree = "<group>"; };
+		DBA978271C86E68F003291E4 /* MonitorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitorTableViewController.swift; sourceTree = "<group>"; };
+		DBA978291C870B17003291E4 /* Monitors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Monitors.swift; sourceTree = "<group>"; };
+		DBA9782B1C8723AB003291E4 /* monitorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = monitorTableViewCell.swift; sourceTree = "<group>"; };
+		DBDF941B1C83646B00693149 /* pcTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pcTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +110,11 @@
 		DB5B69831C28DBCA00E25030 /* mobile application test */ = {
 			isa = PBXGroup;
 			children = (
+				DBA978261C86E494003291E4 /* Monitors */,
 				DB5B69841C28DBCA00E25030 /* AppDelegate.swift */,
 				DB5B69861C28DBCA00E25030 /* ViewController.swift */,
 				DB5B69881C28DBCA00E25030 /* Main.storyboard */,
+				DBA978251C86E390003291E4 /* PCs */,
 				DB5B698B1C28DBCA00E25030 /* Assets.xcassets */,
 				DB5B698D1C28DBCA00E25030 /* LaunchScreen.storyboard */,
 				DB5B69901C28DBCA00E25030 /* Info.plist */,
@@ -123,6 +138,26 @@
 				DB5B69A61C28DBCA00E25030 /* Info.plist */,
 			);
 			path = "mobile application testUITests";
+			sourceTree = "<group>";
+		};
+		DBA978251C86E390003291E4 /* PCs */ = {
+			isa = PBXGroup;
+			children = (
+				DBA9781E1C84AACA003291E4 /* PCs.swift */,
+				DBA978211C859381003291E4 /* PcTableViewController.swift */,
+				DBDF941B1C83646B00693149 /* pcTableViewCell.swift */,
+			);
+			name = PCs;
+			sourceTree = "<group>";
+		};
+		DBA978261C86E494003291E4 /* Monitors */ = {
+			isa = PBXGroup;
+			children = (
+				DBA978271C86E68F003291E4 /* MonitorTableViewController.swift */,
+				DBA978291C870B17003291E4 /* Monitors.swift */,
+				DBA9782B1C8723AB003291E4 /* monitorTableViewCell.swift */,
+			);
+			name = Monitors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,7 +291,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBA9782C1C8723AB003291E4 /* monitorTableViewCell.swift in Sources */,
+				DBA9782A1C870B17003291E4 /* Monitors.swift in Sources */,
+				DBA978281C86E68F003291E4 /* MonitorTableViewController.swift in Sources */,
 				DB5B69871C28DBCA00E25030 /* ViewController.swift in Sources */,
+				DBA978231C859381003291E4 /* PcTableViewController.swift in Sources */,
+				DBDF941C1C83646B00693149 /* pcTableViewCell.swift in Sources */,
+				DBA9781F1C84AACA003291E4 /* PCs.swift in Sources */,
 				DB5B69851C28DBCA00E25030 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,6 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBA978201C84AACA003291E4 /* PCs.swift in Sources */,
 				DB5B699A1C28DBCA00E25030 /* mobile_application_testTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,6 +526,7 @@
 				DB5B69AB1C28DBCA00E25030 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DB5B69AC1C28DBCA00E25030 /* Build configuration list for PBXNativeTarget "mobile application testTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +535,7 @@
 				DB5B69AE1C28DBCA00E25030 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DB5B69AF1C28DBCA00E25030 /* Build configuration list for PBXNativeTarget "mobile application testUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +544,7 @@
 				DB5B69B11C28DBCA00E25030 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
