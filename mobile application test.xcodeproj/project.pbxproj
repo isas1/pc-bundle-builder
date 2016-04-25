@@ -7,20 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB381E921CAC0233009B95D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB381E911CAC0233009B95D8 /* Assets.xcassets */; };
 		DB5B69851C28DBCA00E25030 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5B69841C28DBCA00E25030 /* AppDelegate.swift */; };
 		DB5B69871C28DBCA00E25030 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5B69861C28DBCA00E25030 /* ViewController.swift */; };
 		DB5B698A1C28DBCA00E25030 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB5B69881C28DBCA00E25030 /* Main.storyboard */; };
-		DB5B698C1C28DBCA00E25030 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB5B698B1C28DBCA00E25030 /* Assets.xcassets */; };
 		DB5B698F1C28DBCA00E25030 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB5B698D1C28DBCA00E25030 /* LaunchScreen.storyboard */; };
 		DB5B699A1C28DBCA00E25030 /* mobile_application_testTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5B69991C28DBCA00E25030 /* mobile_application_testTests.swift */; };
 		DB5B69A51C28DBCA00E25030 /* mobile_application_testUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5B69A41C28DBCA00E25030 /* mobile_application_testUITests.swift */; };
+		DB7620111CA54E51007B2C2D /* CurrentSelections.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7620101CA54E51007B2C2D /* CurrentSelections.swift */; };
+		DB7620131CA5833D007B2C2D /* CurrentSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7620121CA5833D007B2C2D /* CurrentSelectionViewController.swift */; };
 		DBA9781F1C84AACA003291E4 /* PCs.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA9781E1C84AACA003291E4 /* PCs.swift */; };
 		DBA978201C84AACA003291E4 /* PCs.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA9781E1C84AACA003291E4 /* PCs.swift */; };
 		DBA978231C859381003291E4 /* PcTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA978211C859381003291E4 /* PcTableViewController.swift */; };
 		DBA978281C86E68F003291E4 /* MonitorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA978271C86E68F003291E4 /* MonitorTableViewController.swift */; };
 		DBA9782A1C870B17003291E4 /* Monitors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA978291C870B17003291E4 /* Monitors.swift */; };
-		DBA9782C1C8723AB003291E4 /* monitorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA9782B1C8723AB003291E4 /* monitorTableViewCell.swift */; };
+		DBA9782C1C8723AB003291E4 /* MonitorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA9782B1C8723AB003291E4 /* MonitorTableViewCell.swift */; };
 		DBDF941C1C83646B00693149 /* pcTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDF941B1C83646B00693149 /* pcTableViewCell.swift */; };
+		DBF5DCDF1C960E2600C10022 /* AccTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF5DCDE1C960E2600C10022 /* AccTableViewCell.swift */; };
+		DBF5DCE11C960E6D00C10022 /* AccTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF5DCE01C960E6D00C10022 /* AccTableViewController.swift */; };
+		DBF5DCE31C960EED00C10022 /* Accessories.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF5DCE21C960EED00C10022 /* Accessories.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,11 +46,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DB381E911CAC0233009B95D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB5B69811C28DBCA00E25030 /* mobile application test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mobile application test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB5B69841C28DBCA00E25030 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB5B69861C28DBCA00E25030 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DB5B69891C28DBCA00E25030 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		DB5B698B1C28DBCA00E25030 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB5B698E1C28DBCA00E25030 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB5B69901C28DBCA00E25030 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB5B69951C28DBCA00E25030 /* mobile application testTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mobile application testTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,12 +59,17 @@
 		DB5B69A01C28DBCA00E25030 /* mobile application testUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mobile application testUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB5B69A41C28DBCA00E25030 /* mobile_application_testUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mobile_application_testUITests.swift; sourceTree = "<group>"; };
 		DB5B69A61C28DBCA00E25030 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB7620101CA54E51007B2C2D /* CurrentSelections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentSelections.swift; sourceTree = "<group>"; };
+		DB7620121CA5833D007B2C2D /* CurrentSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentSelectionViewController.swift; sourceTree = "<group>"; };
 		DBA9781E1C84AACA003291E4 /* PCs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PCs.swift; sourceTree = "<group>"; };
 		DBA978211C859381003291E4 /* PcTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PcTableViewController.swift; sourceTree = "<group>"; };
 		DBA978271C86E68F003291E4 /* MonitorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitorTableViewController.swift; sourceTree = "<group>"; };
 		DBA978291C870B17003291E4 /* Monitors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Monitors.swift; sourceTree = "<group>"; };
-		DBA9782B1C8723AB003291E4 /* monitorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = monitorTableViewCell.swift; sourceTree = "<group>"; };
+		DBA9782B1C8723AB003291E4 /* MonitorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitorTableViewCell.swift; sourceTree = "<group>"; };
 		DBDF941B1C83646B00693149 /* pcTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pcTableViewCell.swift; sourceTree = "<group>"; };
+		DBF5DCDE1C960E2600C10022 /* AccTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccTableViewCell.swift; sourceTree = "<group>"; };
+		DBF5DCE01C960E6D00C10022 /* AccTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccTableViewController.swift; sourceTree = "<group>"; };
+		DBF5DCE21C960EED00C10022 /* Accessories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Accessories.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,14 +120,17 @@
 		DB5B69831C28DBCA00E25030 /* mobile application test */ = {
 			isa = PBXGroup;
 			children = (
-				DBA978261C86E494003291E4 /* Monitors */,
+				DB381E911CAC0233009B95D8 /* Assets.xcassets */,
+				DBF5DCDD1C9609C800C10022 /* Monitors */,
 				DB5B69841C28DBCA00E25030 /* AppDelegate.swift */,
 				DB5B69861C28DBCA00E25030 /* ViewController.swift */,
 				DB5B69881C28DBCA00E25030 /* Main.storyboard */,
 				DBA978251C86E390003291E4 /* PCs */,
-				DB5B698B1C28DBCA00E25030 /* Assets.xcassets */,
 				DB5B698D1C28DBCA00E25030 /* LaunchScreen.storyboard */,
 				DB5B69901C28DBCA00E25030 /* Info.plist */,
+				DBF5DCE41C96131300C10022 /* Accessories */,
+				DB7620101CA54E51007B2C2D /* CurrentSelections.swift */,
+				DB7620121CA5833D007B2C2D /* CurrentSelectionViewController.swift */,
 			);
 			path = "mobile application test";
 			sourceTree = "<group>";
@@ -150,14 +163,24 @@
 			name = PCs;
 			sourceTree = "<group>";
 		};
-		DBA978261C86E494003291E4 /* Monitors */ = {
+		DBF5DCDD1C9609C800C10022 /* Monitors */ = {
 			isa = PBXGroup;
 			children = (
 				DBA978271C86E68F003291E4 /* MonitorTableViewController.swift */,
 				DBA978291C870B17003291E4 /* Monitors.swift */,
-				DBA9782B1C8723AB003291E4 /* monitorTableViewCell.swift */,
+				DBA9782B1C8723AB003291E4 /* MonitorTableViewCell.swift */,
 			);
 			name = Monitors;
+			sourceTree = "<group>";
+		};
+		DBF5DCE41C96131300C10022 /* Accessories */ = {
+			isa = PBXGroup;
+			children = (
+				DBF5DCDE1C960E2600C10022 /* AccTableViewCell.swift */,
+				DBF5DCE01C960E6D00C10022 /* AccTableViewController.swift */,
+				DBF5DCE21C960EED00C10022 /* Accessories.swift */,
+			);
+			name = Accessories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +251,7 @@
 				TargetAttributes = {
 					DB5B69801C28DBCA00E25030 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 7LW5526J74;
 					};
 					DB5B69941C28DBCA00E25030 = {
 						CreatedOnToolsVersion = 7.2;
@@ -265,7 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB5B698F1C28DBCA00E25030 /* LaunchScreen.storyboard in Resources */,
-				DB5B698C1C28DBCA00E25030 /* Assets.xcassets in Resources */,
+				DB381E921CAC0233009B95D8 /* Assets.xcassets in Resources */,
 				DB5B698A1C28DBCA00E25030 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,12 +315,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DBA9782C1C8723AB003291E4 /* monitorTableViewCell.swift in Sources */,
+				DB7620131CA5833D007B2C2D /* CurrentSelectionViewController.swift in Sources */,
+				DBA9782C1C8723AB003291E4 /* MonitorTableViewCell.swift in Sources */,
 				DBA9782A1C870B17003291E4 /* Monitors.swift in Sources */,
+				DBF5DCE31C960EED00C10022 /* Accessories.swift in Sources */,
 				DBA978281C86E68F003291E4 /* MonitorTableViewController.swift in Sources */,
 				DB5B69871C28DBCA00E25030 /* ViewController.swift in Sources */,
+				DBF5DCDF1C960E2600C10022 /* AccTableViewCell.swift in Sources */,
+				DB7620111CA54E51007B2C2D /* CurrentSelections.swift in Sources */,
 				DBA978231C859381003291E4 /* PcTableViewController.swift in Sources */,
 				DBDF941C1C83646B00693149 /* pcTableViewCell.swift in Sources */,
+				DBF5DCE11C960E6D00C10022 /* AccTableViewController.swift in Sources */,
 				DBA9781F1C84AACA003291E4 /* PCs.swift in Sources */,
 				DB5B69851C28DBCA00E25030 /* AppDelegate.swift in Sources */,
 			);
@@ -441,10 +470,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "mobile application test/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "uni.mobile-application-test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -452,10 +484,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "mobile application test/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "uni.mobile-application-test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

@@ -10,7 +10,7 @@ import UIKit
 
 class Pc {
     
-    //SI. MARK: pc properties
+    //SI. MARK: pc properties.
     //SI. variables because they will change for each cell.
     var image: UIImage?
     var name: String
@@ -20,10 +20,10 @@ class Pc {
     var ssd: Int?
     var ram: Int
     var sku: Int
-    var price: Double
+    var price: String
     
-    //SI. set the initial value of each variable
-    init?(image: UIImage?, name: String, graphics: String, cpu: String, hdd: Int, ssd: Int?, ram: Int, sku: Int, price: Double) {
+    //SI. set the initial value of each variable.
+    init?(image: UIImage?, name: String, graphics: String, cpu: String, hdd: Int, ssd: Int?, ram: Int, sku: Int, price: String) {
         self.image = image
         self.name = name
         self.graphics = graphics
@@ -31,12 +31,12 @@ class Pc {
         self.hdd = 1
         self.ssd = nil
         self.ram = ram
-        self.sku = 4643466
-        self.price = 0
+        self.sku = 12345
+        self.price = price
         
-        //SI. for validation an if statement has been 
-        if name.isEmpty || graphics.isEmpty || cpu.isEmpty || hdd < 0 || ram < 0 || sku < 0 || price < 0 {
+        //SI. for validation an if statement has been.
+            if name.isEmpty || graphics.isEmpty || cpu.isEmpty || hdd < 0 || ram < 0 || sku < 0 || price.isEmpty {
             return nil
+            }
         }
     }
-}

@@ -10,30 +10,55 @@ import UIKit
 
 class monitorTableViewController: UITableViewController {
     
-    //SI. Initialises monitors with an empty array of objects to store PC details.
-    var monitors = [Monitors]()
+
+    
+    //SI. Variables passed through from pcTableViewController.
+    var pcToDisplay: String! = nil
+    var pcImage: UIImage! = nil
+    var pcPrice: String! = nil
+    
+    //SI. Variables to pass to AccessoryTableViewController.
+    var monForNextTableView: String!
+    var monPriceForNextTableView: Double!
+    var monImageForNextTableView: UIImage!
+    
+    //SI. clears array - added to prevent duplicate cell being loaded upon app reset.
+    func clearMons() {
+        monitors = []
+    }
     
     //SI. Creates data in a function "loadTestMonitors".
     func loadTestMonitors()
     {
         let pic1 = UIImage(named: "MON1")
-        let mon1 = Monitors(image: pic1, name: "Acer Pedator", screenSize: "24", resolution: "A6", details: "IPS ZeroFrame Gaming Widescreen Monitor", sku: 4643466, price: 499.99)
+        let mon1 = Monitors(image: pic1, name: "Acer Pedator", screensize: "24", resolution: "A6", details: "IPS ZeroFrame Gaming Widescreen", sku: 465739, price: 219.95)
         
         let pic2 = UIImage(named: "MON2")
-        let mon2 = Monitors(image: pic2, name: "PC2", screenSize: "Radeon R7", resolution: "A6", details: "TN G-Sync 144Hz Gaming Widescreen LED Monitor", sku: 4643466, price: 549.99)
+        let mon2 = Monitors(image: pic2, name: "Acer Pedator", screensize: "24", resolution: "1920x1080", details: "TN G-Sync 144Hz Gaming Widescreen LED", sku: 465740, price: 289.99)
         
         let pic3 = UIImage(named: "MON3")
-        let mon3 = Monitors(image: pic3, name: "PC3", screenSize: "Radeon R7", resolution: "A6", details: "IPS SuperWidescreen LED Monitor", sku: 4643466, price: 599.99)
+        let mon3 = Monitors(image: pic3, name: "Acer CB290HU", screensize: "29", resolution: "2560x1080", details: "IPS SuperWidescreen LED", sku: 465741, price: 319.99)
+        
+        let pic4 = UIImage(named: "MON4")
+        let mon4 = Monitors(image: pic4, name: "Acer Pedator XB27OHA", screensize: "27", resolution: "1920x1080", details: "TN G-Sync 144Hz Gaming Widescreen LED", sku: 465742, price: 389.99)
+        
+        let pic5 = UIImage(named: "MON5")
+        let mon5 = Monitors(image: pic5, name: "Acer 4k2k S277HK", screensize: "27", resolution: "3840x2160", details: "IPS ZeroFrame Widescreen LED", sku: 465743, price: 419.99)
+        
+        let pic6 = UIImage(named: "MON6")
+        let mon6 = Monitors(image: pic6, name: "Acer Predator XR341CKB", screensize: "34", resolution: "3440x1440", details: "IPS FREESYNC WideScreen Super-Wide Curved LED", sku: 465745, price: 799.99)
+        
+        let pic7 = UIImage(named: "MON7")
+        let mon7 = Monitors(image: pic7, name: "Acer Predator X34", screensize: "34", resolution: "3440x1440", details: "IPS G-SYNC WideScreen Super-Wide ZeroFrame Curved LED", sku: 465746, price: 989.99)
         
         //SI. adds details stored in pc1,2 and 3 to monitors array.
-        //
-        monitors += [mon1!, mon2!, mon3!]
+        monitors += [mon1!, mon2!, mon3!, mon4!, mon5!, mon6!, mon7!]
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        clearMons()
         //SI. run loadTestmonitors function when view loads which create PC information.
         loadTestMonitors()
         // Uncomment the following line to preserve selection between presentations
@@ -66,8 +91,8 @@ class monitorTableViewController: UITableViewController {
         
         //SI. created a constant for pcTableViewCell which was set earlier as the reuse identifier for the prototype cell in the table view controller.
         //SI. type of cell needs to be downcast to custom cell subclass (pcTableViewCell).
-        let cellIdentifier = "monitorTableViewCell"
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! monitorTableViewCell
+        let cellIdentifier = "MonitorTableViewCell"
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! MonitorTableViewCell
         
         //SI. retrieves current pc data for data source layout.
         let monitor = monitors[indexPath.row]
@@ -75,16 +100,56 @@ class monitorTableViewController: UITableViewController {
         //SI. text used for Strings, tag used for Ints. ssd is an optional variable so again required "!" to force unwrap.
         cell.nameLabel.text = monitor.name
         cell.monImageView.image = monitor.image
-        cell.screenSizeLabel.text = monitor.screenSize
+        cell.screensizeLabel.text = monitor.screensize
         cell.resolutionLabel.text = monitor.resolution
         cell.detailsLabel.text = String(monitor.details)+"TB"
         //cell.ssdLabel.text = String(pc.ssd)
-        cell.priceLabel.text = "£"+String(monitor.price)
+        cell.priceLabel.text = String(monitor.price)
+        cell.skuLabel.text = String(monitor.sku)
         //SI. add price as double in here - could not find.
         
         return cell
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let cellIdentifier = "MonitorTableViewCell"
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! MonitorTableViewCell
+        
+        let currentMon = monitors[indexPath.row].name
+        let currentMonImage = monitors[indexPath.row].image
+        let currentMonPrice = monitors[indexPath.row].price
+        let monitor = monitors[indexPath.row]
+        
+        cell.monImageView.image = monitor.image
+        cell.nameLabel.text = monitor.name
+        cell.priceLabel.text = String(monitor.price)
+        
+        self.monForNextTableView = currentMon
+        self.monImageForNextTableView = currentMonImage
+        self.monPriceForNextTableView = currentMonPrice
+        performSegueWithIdentifier("accSeague", sender: nil)
+    }
+
+    override public func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "accSeague") {
+            
+            let nav = segue.destinationViewController as! UINavigationController
+            let nextTableView = nav.topViewController as! AccTableViewController
+            //let nextTableView = segue.destinationViewController as! monitorTableViewController
+            //nextTableView.pcToDisplay = pcToDisplay
+            //print((sender as! pcTableViewCell?)?.nameLabel.text)
+            
+            nextTableView.pcToDisplay = pcToDisplay
+            nextTableView.pcImage = pcImage
+            nextTableView.pcPrice = pcPrice
+            nextTableView.monToDisplay = (sender as! MonitorTableViewCell?)?.nameLabel.text
+            nextTableView.monImage = (sender as! MonitorTableViewCell?)?.monImageView.image
+            nextTableView.monPrice = (sender as! MonitorTableViewCell?)?.priceLabel.text
+            
+        }
+        
+    }
+
     /*
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
