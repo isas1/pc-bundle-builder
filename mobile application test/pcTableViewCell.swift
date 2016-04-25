@@ -7,7 +7,9 @@
 //
 
 
-//SI - created a new file to design table view cells.
+//SI - created a new class provide connection to  table view cells.
+
+//SI. UIKit framework used for UITableViewCell, UIImageView and UILabel.
 import UIKit
 
 //SI - It's a subclass of UITableViewCell

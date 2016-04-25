@@ -6,19 +6,19 @@
 //  Copyright © 2016 Sam Isaacs. All rights reserved.
 //
 
+//SI. UIKit framework used to make UITableViewController see development section of documentation for all uses within UIKit.
 import UIKit
 
+//SI. PcTableViewController class uses UITableViewController which manages a table view by creating a controller object.
 class PcTableViewController: UITableViewController {
     
     var pcForNextTableView: String!
     var pcPriceForNextTableView: String!
     var pcImageForNextTableView: UIImage!
-    
     var pcToDisplay: String!
     var pcImage: UIImage!
-    
 
-    
+    //SI. clears array - added to prevent duplicate cell being loaded upon app reset.
     func clearPCs() {
         pcs = []
     }
@@ -81,11 +81,14 @@ class PcTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //SI. created function to clear table cell upon load for circumvent problem where data is loaded on top of previous data when reset button is used.
+        clearPCs()
         //SI. run loadTestPcs function when view loads which create PC information.
         loadTestPcs()
+        
                 // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+        
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         //self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
@@ -132,14 +135,13 @@ class PcTableViewController: UITableViewController {
         return cell
     }
 
-/*
+/* REDUNDANT CODE
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         //segue.destinationViewController
         print("prepareForSegue")
         monitorTableViewController()
         
     }
-*/
     
     
 //SI. Apple (2016) state that override is used to create a custom instances of an existing function. Function added here to load the seague (transistion) between pctableview controller and monitortableview controller when a cell in tableview (in this case pcTableView) is selected.
@@ -147,19 +149,16 @@ class PcTableViewController: UITableViewController {
     
     /* SI. Manual method to override didSelectRowAtIndexPath. Not ideal.
     http://stackoverflow.com/questions/35951088/swift-reloading-data-in-table-view-controllers/35956256?noredirect=1#comment59569255_35956256
-    */
-    
-    //***************** HERE *************************************
+ 
     
 //func myArrayFunc(inputArray:Array<Any>) -> Array<Any> {}
     
-    //SI. Working method for passing data through view controllers!!!
+    //SI. Working method for passing data through view controllers!!! :))))
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         let cellIdentifier = "pcTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! pcTableViewCell
-        
         let currentPC = pcs[indexPath.row].name
         let currentPcImage = pcs[indexPath.row].image
         let currentPcPrice = pcs[indexPath.row].price
@@ -168,9 +167,6 @@ class PcTableViewController: UITableViewController {
         cell.picImageView.image = pc.image
         cell.nameLabel.text = pc.name
         cell.priceLabel.text = pc.price
-     
-        //print(currentPC)
-        
         
         self.pcForNextTableView = currentPC
         self.pcImageForNextTableView = currentPcImage
@@ -191,6 +187,9 @@ class PcTableViewController: UITableViewController {
         //self.performSegueWithIdentifier("ShowMonitorsSeague" , sender: indexPath)
         
     }
+ 
+ */
+ */
     
     override public func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         //print((sender as! pcTableViewCell?)?.nameLabel.text)
@@ -205,8 +204,9 @@ class PcTableViewController: UITableViewController {
             nextTableView.pcImage = (sender as! pcTableViewCell?)?.picImageView.image
             nextTableView.pcPrice = (sender as! pcTableViewCell?)?.priceLabel.text
         }
-        
     }
+    
+    /* REDUNDANT CODE
         //print(pcToDisplay)
         //print (pcForNextTableView)
 
@@ -264,6 +264,8 @@ class PcTableViewController: UITableViewController {
         */
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+ 
+     */
 }
     
 

@@ -6,6 +6,7 @@
 //  Copyright © 2016 Sam Isaacs. All rights reserved.
 //
 
+//SI. UIKit framework needed to use UIImage.
 import UIKit
 
 class Pc {

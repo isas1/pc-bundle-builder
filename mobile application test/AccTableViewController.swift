@@ -6,6 +6,7 @@
 //  Copyright © 2016 Sam Isaacs. All rights reserved.
 //
 
+//SI. UIKit framework used to make UITableViewController available. Please see development section of documentation for all uses of UIKit.
 import UIKit
 
 class AccTableViewController: UITableViewController {
@@ -63,8 +64,7 @@ class AccTableViewController: UITableViewController {
         let pic9 = UIImage(named: "ACC9")
         let acc9 = Accessories(image: pic9, desc: "Mouse Cougar 600M Black", sku: 0, price: "14.99")
         
-        //SI. adds details to array.
-        accessories += [acc1!, acc2!, acc3!, acc4!, acc5!, acc6!, acc7!, acc8!, acc9!]
+        accessories += [acc1!, acc2!, acc3!, acc4!, acc5!, acc6!, acc7!, acc8!, acc9!] //SI. adds details to array.
     }
     
     
@@ -74,11 +74,14 @@ class AccTableViewController: UITableViewController {
         clearAcc()
         //SI. run loadTestmonitors function when view loads which create PC information.
         loadTestAccessories()
+        
+        /* REDUNDANT
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         //self.navigationItem.rightBarButtonItem = self.editButtonItem()
+         */
     }
     
     
@@ -90,13 +93,11 @@ class AccTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        //SI. function included in UITableViewController class. 1 section desired.
-        return 1
+        return 1 //SI. function included in UITableViewController class. 1 section desired.
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //SI. creates a row for each object in monitors array.
-        return accessories.count
+        return accessories.count //SI. creates a row for each object in monitors array.
     }
     
     //SI. enabled protocol used for cell management. Best practice for when cells they are out of view, the data is dropped and cell can be reused.
@@ -120,6 +121,7 @@ class AccTableViewController: UITableViewController {
         return cell
     }
     
+    /*
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let cellIdentifier = "AccTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! AccTableViewCell
@@ -138,15 +140,17 @@ class AccTableViewController: UITableViewController {
         self.accPriceForNextTableView = String(currentAccPrice)
         performSegueWithIdentifier("summarySegue", sender: nil)
     }
+     */
     
+    
+    // SI. code runs immediately before seague to CurrentSelectionsTableViewController.
     override public func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (segue.identifier == "summarySegue") {
+        if (segue.identifier == "summarySegue") { //SI. checks that seague identifier is summarySegue.
             
             let nav = segue.destinationViewController as! UINavigationController
-            let nextTableView = nav.topViewController as! CurrentSelectionViewController
-            //let nextTableView = segue.destinationViewController as! monitorTableViewController
-            //nextTableView.pcToDisplay = pcToDisplay
-            //print((sender as! pcTableViewCell?)?.nameLabel.text)
+            let nextTableView = nav.topViewController as! CurrentSelectionViewController //SI. creates next view controller as an object, used to pass data to the next view controller.
+            
+            //SI. objects passed to CurrentSelectionsTableViewController.
             nextTableView.pcToDisplay = pcToDisplay
             nextTableView.pcImage = pcImage
             nextTableView.pcPrice = pcPrice
@@ -160,8 +164,5 @@ class AccTableViewController: UITableViewController {
             nextTableView.accPrice = (sender as! AccTableViewCell?)?.priceLabel.text
             
         }
-        
     }
-
-
 }

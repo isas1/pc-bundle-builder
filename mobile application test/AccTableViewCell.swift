@@ -6,6 +6,9 @@
 //  Copyright © 2016 Sam Isaacs. All rights reserved.
 //
 
+//SI - class to design table view cells.
+
+//SI. UIKit framework used for UITableViewCell, UIImageView and UILabel.
 import UIKit
 
 class AccTableViewCell: UITableViewCell {

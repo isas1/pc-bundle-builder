@@ -6,6 +6,7 @@
 //  Copyright © 2016 Sam Isaacs. All rights reserved.
 //
 
+//SI. UIKit used for to call UIViewController, UIImage, UIImageView
 import UIKit
 
 var currentSelection = [Int]()
@@ -17,7 +18,6 @@ var pcs = [Pc]()
 
 //SI. Initialises monitors with an empty array of objects from Montior() class.
 var monitors = [Monitors]()
-
 
 
 class CurrentSelectionViewController: UIViewController {
@@ -37,7 +37,7 @@ class CurrentSelectionViewController: UIViewController {
     var accImage: UIImage! = nil
     var accPrice: String! = nil
     
-    
+    //SI. Connections between data model and view.
     @IBOutlet weak var pcImageView: UIImageView!
     @IBOutlet weak var pcNameOutlet: UILabel!
     @IBOutlet weak var pcPriceOutlet: UILabel!
@@ -52,6 +52,7 @@ class CurrentSelectionViewController: UIViewController {
     
     @IBOutlet weak var totalPriceOutlet: UILabel!
     
+    //SI. when view loads pass the data retieved for previous views to variable for IBOublets.
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -67,15 +68,21 @@ class CurrentSelectionViewController: UIViewController {
         accImageView.image = accImage
         accPriceOutlet.text = "£"+accPrice
         
+/*
+ *      SI. CALCULATIONS
+*/
+        //SI. convert values to Doubles and store in constants.
         let pcInt:Double? = Double(pcPrice)
         let monInt:Double? = Double(monPrice)
         let accInt:Double? = Double(accPrice)
         
+        //SI. add prices together.
         let totalPrice = pcInt! + monInt! + accInt!
         
+        //SI. pass total to totalPriceOutlet variable.
         totalPriceOutlet.text = "£"+String(totalPrice)
         
-        /*
+        /* FAILED ATTEMPT TO RETRIEVE IMAGE
         if let image = UIImage(data:pcImage) {
             dispatch_async(dispatch_get_main_queue()) {
                 self.pcImage.image = image

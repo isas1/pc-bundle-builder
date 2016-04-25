@@ -6,11 +6,13 @@
 //  Copyright © 2016 Sam Isaacs. All rights reserved.
 //
 
+//SI. UIKit framework used to make UITableViewController available.
+//https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKit_Framework/
 import UIKit
 
+//SI. created class uses UITableViewController which manages a table view by creating a controller object.
+//https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewController_Class/index.html#//apple_ref/occ/cl/UITableViewController
 class monitorTableViewController: UITableViewController {
-    
-
     
     //SI. Variables passed through from pcTableViewController.
     var pcToDisplay: String! = nil
@@ -51,16 +53,18 @@ class monitorTableViewController: UITableViewController {
         let pic7 = UIImage(named: "MON7")
         let mon7 = Monitors(image: pic7, name: "Acer Predator X34", screensize: "34", resolution: "3440x1440", details: "IPS G-SYNC WideScreen Super-Wide ZeroFrame Curved LED", sku: 465746, price: 989.99)
         
-        //SI. adds details stored in pc1,2 and 3 to monitors array.
-        monitors += [mon1!, mon2!, mon3!, mon4!, mon5!, mon6!, mon7!]
+        monitors += [mon1!, mon2!, mon3!, mon4!, mon5!, mon6!, mon7!] //SI. adds details stored in pc1,2 and 3 to monitors array.
+
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        clearMons()
-        //SI. run loadTestmonitors function when view loads which create PC information.
-        loadTestMonitors()
+        
+        clearMons() //SI. calls clearMons() which
+        loadTestMonitors() //SI. run loadTestmonitors function when view loads which create PC information.
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
@@ -77,15 +81,15 @@ class monitorTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        //SI. function included in UITableViewController class. 1 section desired.
-        return 1
+        
+        return 1 //SI. function included in UITableViewController class. 1 section desired.
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //SI. creates a row for each object in monitors array.
-        return monitors.count
+        
+        return monitors.count //SI. creates a row for each object in monitors array.
     }
-    
+
     //SI. enabled protocol used for cell management. Best practice for when cells they are out of view, the data is dropped and cell can be reused.
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
@@ -93,9 +97,7 @@ class monitorTableViewController: UITableViewController {
         //SI. type of cell needs to be downcast to custom cell subclass (pcTableViewCell).
         let cellIdentifier = "MonitorTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! MonitorTableViewCell
-        
-        //SI. retrieves current pc data for data source layout.
-        let monitor = monitors[indexPath.row]
+        let monitor = monitors[indexPath.row] //SI. retrieves current pc data for data source layout.
         
         //SI. text used for Strings, tag used for Ints. ssd is an optional variable so again required "!" to force unwrap.
         cell.nameLabel.text = monitor.name
@@ -111,6 +113,8 @@ class monitorTableViewController: UITableViewController {
         return cell
     }
     
+ /* REDUNDANT CODE - INITIALLY USED.
+    //SI. function to prepare data. prepareForSeague.
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let cellIdentifier = "MonitorTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! MonitorTableViewCell
@@ -129,25 +133,23 @@ class monitorTableViewController: UITableViewController {
         self.monPriceForNextTableView = currentMonPrice
         performSegueWithIdentifier("accSeague", sender: nil)
     }
+*/
 
+    // SI. code runs immediately before seague to AccTableViewController.
     override public func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (segue.identifier == "accSeague") {
+        if (segue.identifier == "accSeague") { //SI. checks that seague identifier is accSeague.
             
             let nav = segue.destinationViewController as! UINavigationController
-            let nextTableView = nav.topViewController as! AccTableViewController
-            //let nextTableView = segue.destinationViewController as! monitorTableViewController
-            //nextTableView.pcToDisplay = pcToDisplay
-            //print((sender as! pcTableViewCell?)?.nameLabel.text)
+            let nextTableView = nav.topViewController as! AccTableViewController //SI. creates next view controller as an object, used to pass data to the next view controller.
             
+            //SI. objects passed to accessoryTableViewController.
             nextTableView.pcToDisplay = pcToDisplay
             nextTableView.pcImage = pcImage
             nextTableView.pcPrice = pcPrice
             nextTableView.monToDisplay = (sender as! MonitorTableViewCell?)?.nameLabel.text
             nextTableView.monImage = (sender as! MonitorTableViewCell?)?.monImageView.image
             nextTableView.monPrice = (sender as! MonitorTableViewCell?)?.priceLabel.text
-            
         }
-        
     }
 
     /*
