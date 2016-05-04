@@ -92,5 +92,7 @@ class mobile_application_testTests: XCTestCase {
         XCTAssertNil(noName, "No name, invalid")
         //SI. end of invalid tests.
     }
+    
+
 
 }

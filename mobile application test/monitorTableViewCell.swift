@@ -6,20 +6,22 @@
 //  Copyright © 2016 Sam Isaacs. All rights reserved.
 //
 
+//SI. UIKit framework used for UITableViewCell, UIImageView and UILabel.
 import UIKit
 
-class monitorTableViewCell: UITableViewCell {
+class MonitorTableViewCell: UITableViewCell {
+
+    //SI. IBOutlets are used to connect the view within storyboard to code reprenting table view cells in  MonitorTableViewCell.swift.
     @IBOutlet weak var monImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var screenSizeLabel: UILabel!
+    @IBOutlet weak var screensizeLabel: UILabel!
     @IBOutlet weak var resolutionLabel: UILabel!
     @IBOutlet weak var detailsLabel: UILabel!
     @IBOutlet weak var skuLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     
-    
-    
-    
+    /* REDUNDANT CODE
+     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -30,5 +32,6 @@ class monitorTableViewCell: UITableViewCell {
         
         // Configure the view for the selected state
     }
+ */
 
 }

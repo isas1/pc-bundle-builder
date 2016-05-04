@@ -10,7 +10,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+/*
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.blackColor(); //SI. testing view did load functionality and source control.
@@ -22,6 +22,6 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+*/
 }
 

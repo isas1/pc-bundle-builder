@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		DB381E921CAC0233009B95D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB381E911CAC0233009B95D8 /* Assets.xcassets */; };
 		DB5B69851C28DBCA00E25030 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5B69841C28DBCA00E25030 /* AppDelegate.swift */; };
-		DB5B69871C28DBCA00E25030 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5B69861C28DBCA00E25030 /* ViewController.swift */; };
 		DB5B698A1C28DBCA00E25030 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB5B69881C28DBCA00E25030 /* Main.storyboard */; };
 		DB5B698F1C28DBCA00E25030 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB5B698D1C28DBCA00E25030 /* LaunchScreen.storyboard */; };
 		DB5B699A1C28DBCA00E25030 /* mobile_application_testTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5B69991C28DBCA00E25030 /* mobile_application_testTests.swift */; };
@@ -49,7 +48,6 @@
 		DB381E911CAC0233009B95D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB5B69811C28DBCA00E25030 /* mobile application test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mobile application test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB5B69841C28DBCA00E25030 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DB5B69861C28DBCA00E25030 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DB5B69891C28DBCA00E25030 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DB5B698E1C28DBCA00E25030 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB5B69901C28DBCA00E25030 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -123,14 +121,12 @@
 				DB381E911CAC0233009B95D8 /* Assets.xcassets */,
 				DBF5DCDD1C9609C800C10022 /* Monitors */,
 				DB5B69841C28DBCA00E25030 /* AppDelegate.swift */,
-				DB5B69861C28DBCA00E25030 /* ViewController.swift */,
 				DB5B69881C28DBCA00E25030 /* Main.storyboard */,
 				DBA978251C86E390003291E4 /* PCs */,
 				DB5B698D1C28DBCA00E25030 /* LaunchScreen.storyboard */,
 				DB5B69901C28DBCA00E25030 /* Info.plist */,
 				DBF5DCE41C96131300C10022 /* Accessories */,
-				DB7620101CA54E51007B2C2D /* CurrentSelections.swift */,
-				DB7620121CA5833D007B2C2D /* CurrentSelectionViewController.swift */,
+				DB8F967E1CD65B400031C509 /* Summary */,
 			);
 			path = "mobile application test";
 			sourceTree = "<group>";
@@ -151,6 +147,15 @@
 				DB5B69A61C28DBCA00E25030 /* Info.plist */,
 			);
 			path = "mobile application testUITests";
+			sourceTree = "<group>";
+		};
+		DB8F967E1CD65B400031C509 /* Summary */ = {
+			isa = PBXGroup;
+			children = (
+				DB7620101CA54E51007B2C2D /* CurrentSelections.swift */,
+				DB7620121CA5833D007B2C2D /* CurrentSelectionViewController.swift */,
+			);
+			name = Summary;
 			sourceTree = "<group>";
 		};
 		DBA978251C86E390003291E4 /* PCs */ = {
@@ -320,7 +325,6 @@
 				DBA9782A1C870B17003291E4 /* Monitors.swift in Sources */,
 				DBF5DCE31C960EED00C10022 /* Accessories.swift in Sources */,
 				DBA978281C86E68F003291E4 /* MonitorTableViewController.swift in Sources */,
-				DB5B69871C28DBCA00E25030 /* ViewController.swift in Sources */,
 				DBF5DCDF1C960E2600C10022 /* AccTableViewCell.swift in Sources */,
 				DB7620111CA54E51007B2C2D /* CurrentSelections.swift in Sources */,
 				DBA978231C859381003291E4 /* PcTableViewController.swift in Sources */,
@@ -470,11 +474,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Sam Isaacs (Y8XZAWQH2K)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "mobile application test/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = uni.mobile.application.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sam.mobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -484,11 +488,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Sam Isaacs (Y8XZAWQH2K)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "mobile application test/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = uni.mobile.application.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sam.mobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
