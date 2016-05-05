@@ -69,58 +69,42 @@ class PcTableViewController: UITableViewController {
         let pc14 = Pc(image: pic14, name: "G14", graphics: "GTX 980Ti 4GB", cpu: "i5 6700K", hdd: 2, ssd:  500, ram:  16, sku: 464798, price: "1599.99")
         
         let pic15 = UIImage(named: "PC15")
-        let pc15 = Pc(image: pic14, name: "G15", graphics: "GTX 980Ti 4GB", cpu: "i7 6700K", hdd: 2, ssd:  500, ram:  16, sku: 464799, price: "1699.99")
+        let pc15 = Pc(image: pic15, name: "G15", graphics: "GTX 980Ti 4GB", cpu: "i7 6700K", hdd: 2, ssd:  500, ram:  16, sku: 464799, price: "1699.99")
         
-        
-        //SI. adds details stored in pc1,2 and 3 to pcs array.
-        //
-        pcs += [pc1!, pc2!, pc3!, pc4!, pc5!, pc6!, pc7!, pc8!, pc9!, pc10!, pc11!, pc12!, pc13!, pc14!, pc15!]
-
+        pcs += [pc1!, pc2!, pc3!, pc4!, pc5!, pc6!, pc7!, pc8!, pc9!, pc10!, pc11!, pc12!, pc13!, pc14!, pc15!] //SI. adds details stored in pc1,2 and 3 to pcs array.
     }
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
-        //SI. created function to clear table cell upon load for circumvent problem where data is loaded on top of previous data when reset button is used.
-        clearPCs()
-        //SI. run loadTestPcs function when view loads which create PC information.
-        loadTestPcs()
-        
-                // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        //self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        clearPCs() //SI. resets to an empty array.
+        loadTestPcs() //SI. run loadTestPcs function when view loads which create PC information.
     }
-    
     
     override func didReceiveMemoryWarning() {
+        
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
-
+    //SI. required by UITableViewController - sets number of sections in table view.
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        //SI. function included in UITableViewController class. 1 section desired.
-        return 1
-    }
 
+        return 1 //SI. function included in UITableViewController class. 1 section desired.
+    }
+    
+    //SI. required by UITableViewController - sets number of rows in each section.
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //SI. creates a row for each object in pcs array.
-        return pcs.count
+        
+        return pcs.count //SI. creates a row for each object in pcs array.
     }
 
     //SI. enabled protocol used for cell management. Best practice for when cells they are out of view, the data is dropped and cell can be reused.
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        //SI. created a constant for pcTableViewCell which was set earlier as the reuse identifier for the prototype cell in the table view controller.
-        //SI. type of cell needs to be downcast to custom cell subclass (pcTableViewCell).
-        let cellIdentifier = "pcTableViewCell"
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! pcTableViewCell
-        
-        //SI. retrieves current pc data for data source layout.
-        let pc = pcs[indexPath.row]
+        let cellIdentifier = "pcTableViewCell" //SI. created a constant for pcTableViewCell which was set earlier as the reuse identifier for the prototype cell in the table view controller.
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! pcTableViewCell //SI. type of cell needs to be downcast to custom cell subclass (pcTableViewCell).
+        let pc = pcs[indexPath.row] //SI. retrieves current pc data for data source layout.
         
         //SI. text used for Strings, tag used for Ints. ssd is an optional variable so again required "!" to force unwrap.
         cell.nameLabel.text = pc.name
@@ -128,69 +112,13 @@ class PcTableViewController: UITableViewController {
         cell.graphicsLabel.text = pc.graphics
         cell.cpuLabel.text = pc.cpu
         cell.hddLabel.text = String(pc.hdd)+"TB"
-        //cell.ssdLabel.text = String(pc.ssd)
+        cell.ssdLabel.text = String(pc.ssd)
         cell.ramLabel.text = String(pc.ram) + "GB"
         cell.priceLabel.text = pc.price
-    //SI. add price as double in here - could not find.
+        
         return cell
     }
 
-/* REDUNDANT CODE
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        //segue.destinationViewController
-        print("prepareForSegue")
-        monitorTableViewController()
-        
-    }
-    
-    
-//SI. Apple (2016) state that override is used to create a custom instances of an existing function. Function added here to load the seague (transistion) between pctableview controller and monitortableview controller when a cell in tableview (in this case pcTableView) is selected.
-    
-    
-    /* SI. Manual method to override didSelectRowAtIndexPath. Not ideal.
-    http://stackoverflow.com/questions/35951088/swift-reloading-data-in-table-view-controllers/35956256?noredirect=1#comment59569255_35956256
- 
-    
-//func myArrayFunc(inputArray:Array<Any>) -> Array<Any> {}
-    
-    //SI. Working method for passing data through view controllers!!! :))))
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        let cellIdentifier = "pcTableViewCell"
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! pcTableViewCell
-        let currentPC = pcs[indexPath.row].name
-        let currentPcImage = pcs[indexPath.row].image
-        let currentPcPrice = pcs[indexPath.row].price
-        let pc = pcs[indexPath.row]
-        
-        cell.picImageView.image = pc.image
-        cell.nameLabel.text = pc.name
-        cell.priceLabel.text = pc.price
-        
-        self.pcForNextTableView = currentPC
-        self.pcImageForNextTableView = currentPcImage
-        self.pcPriceForNextTableView = currentPcPrice
-        performSegueWithIdentifier("monSegue", sender: nil)
-
-        
-        /*SI. TESTING - Attempting to retrieve table cell index by adding index of each cell selected to an array which would be used to pull data for the summary page.
-         print("You selected cell #\(indexPath.row)!")
-         // Get Cell Label
-         let indexPath = tableView.indexPathForSelectedRow
-         let pcSelectedCell = indexPath!.row
-         currentSelection += [pcSelectedCell]
-         */
-        //print(pc1!)
-        //[tableViewValues removeAllObjects];
-        //SI. after creating a seague on the main storyboard.
-        //self.performSegueWithIdentifier("ShowMonitorsSeague" , sender: indexPath)
-        
-    }
- 
- */
- */
-    
     override public func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         //print((sender as! pcTableViewCell?)?.nameLabel.text)
         if (segue.identifier == "monSegue") {
@@ -205,67 +133,6 @@ class PcTableViewController: UITableViewController {
             nextTableView.pcPrice = (sender as! pcTableViewCell?)?.priceLabel.text
         }
     }
-    
-    /* REDUNDANT CODE
-        //print(pcToDisplay)
-        //print (pcForNextTableView)
-
-    
-    //SI. REF. DeepVinicius (2014) Swift - Segue on Dynamic TableCell. [Online] Available from: http://stackoverflow.com/questions/26303616/swift-segue-on-dynamic-tablecell [Accessed: 2 March 2016].
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-   
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    /*
-    let SeagueMonitorID = "ShowMonitorSeague"
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == SeagueMonitorID {
-            //if let destination = segue.destinationViewController as? MonitorTableViewController {
-                //if let blogIndex = tableView.indexPathForSelectedRow()?.row {
-                    //destination.blogName = swiftBlogs[blogIndex]
-                }
-            }
-
-        */
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
- 
-     */
 }
     
 

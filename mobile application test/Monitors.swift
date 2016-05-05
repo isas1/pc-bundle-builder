@@ -31,7 +31,7 @@ class Monitors {
         self.sku = sku
         self.price = price
         
-        //SI. for validation an if statement has been
+        //SI. allows application to run if values aren't available - returns nil if any of the strings are empty or ints < 0.
         if name.isEmpty || screensize.isEmpty || resolution.isEmpty || details.isEmpty || sku < 0 || price < 0 {
             return nil
         }

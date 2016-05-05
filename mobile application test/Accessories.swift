@@ -25,7 +25,7 @@ class Accessories {
         self.sku = sku
         self.price = price
         
-        //SI. for validation to return nil if any of the strings are empty or ints < 0.
+        //SI. allows application to run if values aren't available - returns nil if any of the strings are empty or ints < 0.
         if desc.isEmpty || sku < 0 || price.isEmpty {
             return nil
         }

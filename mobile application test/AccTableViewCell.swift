@@ -6,11 +6,12 @@
 //  Copyright © 2016 Sam Isaacs. All rights reserved.
 //
 
-//SI - class to design table view cells.
+//SI. class to design table view cells.
 
 //SI. UIKit framework used for UITableViewCell, UIImageView and UILabel.
 import UIKit
 
+//SI. AccTableViewCell is defined as a member of UITableViewCell.
 class AccTableViewCell: UITableViewCell {
 
     @IBOutlet weak var accImageView: UIImageView!
@@ -20,13 +21,9 @@ class AccTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-
 }

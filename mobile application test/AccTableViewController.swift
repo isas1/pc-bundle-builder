@@ -71,17 +71,8 @@ class AccTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        clearAcc()
-        //SI. run loadTestmonitors function when view loads which create PC information.
-        loadTestAccessories()
-        
-        /* REDUNDANT
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        //self.navigationItem.rightBarButtonItem = self.editButtonItem()
-         */
+        clearAcc() //SI. resets to an empty array.
+        loadTestAccessories()//SI. run loadTestmonitors function when view loads which create PC information.
     }
     
     
@@ -89,8 +80,6 @@ class AccTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    // MARK: - Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1 //SI. function included in UITableViewController class. 1 section desired.
@@ -103,13 +92,9 @@ class AccTableViewController: UITableViewController {
     //SI. enabled protocol used for cell management. Best practice for when cells they are out of view, the data is dropped and cell can be reused.
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        //SI. created a constant for pcTableViewCell which was set earlier as the reuse identifier for the prototype cell in the table view controller.
-        //SI. type of cell needs to be downcast to custom cell subclass (pcTableViewCell).
-        let cellIdentifier = "AccTableViewCell"
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! AccTableViewCell
-        
-        //SI. retrieves current pc data for data source layout.
-        let accessory = accessories[indexPath.row]
+        let cellIdentifier = "AccTableViewCell" //SI. created a constant for pcTableViewCell which was set earlier as the reuse identifier for the prototype cell in the AccTableViewController.
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! AccTableViewCell //SI. type of cell needs to be downcast to custom cell subclass (AccTableViewCell).
+        let accessory = accessories[indexPath.row] //SI. retrieves current pc data for data source layout.
         
         //SI. text used for Strings, tag used for Ints. ssd is an optional variable so again required "!" to force unwrap.
         cell.descLabel.text = accessory.desc
@@ -121,36 +106,14 @@ class AccTableViewController: UITableViewController {
         return cell
     }
     
-    /*
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let cellIdentifier = "AccTableViewCell"
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! AccTableViewCell
-        
-        let currentAcc = accessories[indexPath.row].desc
-        let currentAccImage = accessories[indexPath.row].image
-        let currentAccPrice = accessories[indexPath.row].price
-        let accessory = accessories[indexPath.row]
-        
-        cell.accImageView.image = accessory.image
-        //cell.nameLabel.text = accessory.name
-        cell.priceLabel.text = String(accessory.price)
-        
-        self.accForNextTableView = currentAcc
-        self.accImageForNextTableView = currentAccImage
-        self.accPriceForNextTableView = String(currentAccPrice)
-        performSegueWithIdentifier("summarySegue", sender: nil)
-    }
-     */
-    
-    
     // SI. code runs immediately before seague to CurrentSelectionsTableViewController.
-    override public func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override internal func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "summarySegue") { //SI. checks that seague identifier is summarySegue.
             
             let nav = segue.destinationViewController as! UINavigationController
             let nextTableView = nav.topViewController as! CurrentSelectionViewController //SI. creates next view controller as an object, used to pass data to the next view controller.
             
-            //SI. objects passed to CurrentSelectionsTableViewController.
+            //SI. objects from previous views passed to CurrentSelectionsTableViewController.
             nextTableView.pcToDisplay = pcToDisplay
             nextTableView.pcImage = pcImage
             nextTableView.pcPrice = pcPrice
@@ -158,7 +121,7 @@ class AccTableViewController: UITableViewController {
             nextTableView.monImage = monImage
             nextTableView.monPrice = monPrice
             
-            //SI. Values from current view to be passed to next view controller.
+            //SI. Values from current view to be passed to CurrentSelctionsViewController.
             nextTableView.accToDisplay = (sender as! AccTableViewCell?)?.descLabel.text
             nextTableView.accImage = (sender as! AccTableViewCell?)?.accImageView.image
             nextTableView.accPrice = (sender as! AccTableViewCell?)?.priceLabel.text

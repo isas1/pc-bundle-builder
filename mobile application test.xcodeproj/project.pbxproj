@@ -13,7 +13,6 @@
 		DB5B698F1C28DBCA00E25030 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB5B698D1C28DBCA00E25030 /* LaunchScreen.storyboard */; };
 		DB5B699A1C28DBCA00E25030 /* mobile_application_testTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5B69991C28DBCA00E25030 /* mobile_application_testTests.swift */; };
 		DB5B69A51C28DBCA00E25030 /* mobile_application_testUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5B69A41C28DBCA00E25030 /* mobile_application_testUITests.swift */; };
-		DB7620111CA54E51007B2C2D /* CurrentSelections.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7620101CA54E51007B2C2D /* CurrentSelections.swift */; };
 		DB7620131CA5833D007B2C2D /* CurrentSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7620121CA5833D007B2C2D /* CurrentSelectionViewController.swift */; };
 		DBA9781F1C84AACA003291E4 /* PCs.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA9781E1C84AACA003291E4 /* PCs.swift */; };
 		DBA978201C84AACA003291E4 /* PCs.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA9781E1C84AACA003291E4 /* PCs.swift */; };
@@ -57,7 +56,6 @@
 		DB5B69A01C28DBCA00E25030 /* mobile application testUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mobile application testUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB5B69A41C28DBCA00E25030 /* mobile_application_testUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mobile_application_testUITests.swift; sourceTree = "<group>"; };
 		DB5B69A61C28DBCA00E25030 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DB7620101CA54E51007B2C2D /* CurrentSelections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentSelections.swift; sourceTree = "<group>"; };
 		DB7620121CA5833D007B2C2D /* CurrentSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentSelectionViewController.swift; sourceTree = "<group>"; };
 		DBA9781E1C84AACA003291E4 /* PCs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PCs.swift; sourceTree = "<group>"; };
 		DBA978211C859381003291E4 /* PcTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PcTableViewController.swift; sourceTree = "<group>"; };
@@ -152,7 +150,6 @@
 		DB8F967E1CD65B400031C509 /* Summary */ = {
 			isa = PBXGroup;
 			children = (
-				DB7620101CA54E51007B2C2D /* CurrentSelections.swift */,
 				DB7620121CA5833D007B2C2D /* CurrentSelectionViewController.swift */,
 			);
 			name = Summary;
@@ -326,7 +323,6 @@
 				DBF5DCE31C960EED00C10022 /* Accessories.swift in Sources */,
 				DBA978281C86E68F003291E4 /* MonitorTableViewController.swift in Sources */,
 				DBF5DCDF1C960E2600C10022 /* AccTableViewCell.swift in Sources */,
-				DB7620111CA54E51007B2C2D /* CurrentSelections.swift in Sources */,
 				DBA978231C859381003291E4 /* PcTableViewController.swift in Sources */,
 				DBDF941C1C83646B00693149 /* pcTableViewCell.swift in Sources */,
 				DBF5DCE11C960E6D00C10022 /* AccTableViewController.swift in Sources */,

@@ -6,13 +6,12 @@
 //  Copyright © 2016 Sam Isaacs. All rights reserved.
 //
 
-
 //SI - created a new class provide connection to  table view cells.
 
 //SI. UIKit framework used for UITableViewCell, UIImageView and UILabel.
 import UIKit
 
-//SI - It's a subclass of UITableViewCell
+//SI - pcTableViewCell is defined as a member of UITableViewCell.
 class pcTableViewCell: UITableViewCell {
     
     //SI. connecting code to UI - Xcode provdies functionality to ctrl click drag from UI to here.
@@ -25,16 +24,11 @@ class pcTableViewCell: UITableViewCell {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var picImageView: UIImageView!
     
-
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-
 }
