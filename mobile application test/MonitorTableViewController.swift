@@ -136,7 +136,7 @@ class monitorTableViewController: UITableViewController {
 */
 
     // SI. code runs immediately before seague to AccTableViewController.
-    override public func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override internal func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "accSeague") { //SI. checks that seague identifier is accSeague.
             
             let nav = segue.destinationViewController as! UINavigationController

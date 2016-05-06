@@ -119,7 +119,7 @@ class PcTableViewController: UITableViewController {
         return cell
     }
 
-    override public func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override internal func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         //print((sender as! pcTableViewCell?)?.nameLabel.text)
         if (segue.identifier == "monSegue") {
             

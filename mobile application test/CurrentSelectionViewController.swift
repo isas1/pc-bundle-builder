@@ -11,14 +11,9 @@ import UIKit
 
 var currentSelection = [Int]()
 
-
-//Moved initialisation from orginial table view controllers to allow current selections
-//SI. Initialises pcs with an empty array of objects from the Monitors() to store PC details.
-var pcs = [Pc]()
-
-//SI. Initialises monitors with an empty array of objects from Montior() class.
-var monitors = [Monitors]()
-
+//Moved initialisation from orginial table view controllers to allow current selections access to [Pc]() and [Monitors]()
+var pcs = [Pc]()//SI. Initialises pcs with an empty array of objects from the Monitors() to store PC details.
+var monitors = [Monitors]()//SI. Initialises monitors with an empty array of objects from Montior() class.
 
 class CurrentSelectionViewController: UIViewController {
     
@@ -81,6 +76,7 @@ class CurrentSelectionViewController: UIViewController {
         
         //SI. pass total to totalPriceOutlet variable.
         totalPriceOutlet.text = "£"+String(totalPrice)
+        
     } //SI. viewDidLoad()
 
     override func didReceiveMemoryWarning() {
