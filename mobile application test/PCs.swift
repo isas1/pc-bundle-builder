@@ -31,7 +31,7 @@ class Pc {
         self.graphics = graphics
         self.cpu = cpu
         self.hdd = 1
-        self.ssd = 0
+        self.ssd = 120
         self.ram = ram
         self.sku = 12345
         self.price = price

@@ -111,8 +111,8 @@ class PcTableViewController: UITableViewController {
         cell.picImageView.image = pc.image
         cell.graphicsLabel.text = pc.graphics
         cell.cpuLabel.text = pc.cpu
-        cell.hddLabel.text = String(pc.hdd)+"TB"
-        cell.ssdLabel.text = String(pc.ssd)
+        cell.hddLabel.text = String(pc.hdd) + "TB"
+        cell.ssdLabel.text = String(pc.ssd) + "GB"
         cell.ramLabel.text = String(pc.ram) + "GB"
         cell.priceLabel.text = pc.price
         
