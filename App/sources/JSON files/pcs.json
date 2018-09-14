@@ -1,0 +1,32 @@
+[
+  {
+    "PC1": {
+      "graphics": "Radeon R7",
+      "processor": "A8-7670k",
+      "hdd": "1",
+      "ssd": "",
+      "memory": "8",
+      "price": "499.99"
+    }
+  },
+  {
+    "PC2": {
+      "graphics": "GTX 950",
+      "processor": "X4 860K",
+      "hdd": "1",
+      "ssd": "",
+      "memory": "8",
+      "price": "559.99"
+    }
+  },
+  {
+    "PC3": {
+      "graphics": "GTX 960 4GB",
+      "processor": "X4 860K",
+      "hdd": "1",
+      "ssd": "",
+      "memory": "8",
+      "price": "599.99"
+    }
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "Battlefield": {
+      "PC1": "ns",
+      "PC2": "ns",
+      "PC3": "min"
+    }
+  },
+  {
+    "Counter Strike: Global Offensive": {
+      "PC1": "min",
+      "PC2": "min",
+      "PC3": "min"
+    }
+  },
+  {
+    "Dota 2": {
+      "PC1": "min",
+      "PC2": "min",
+      "PC3": "rec"
+    }
+  }
+]
